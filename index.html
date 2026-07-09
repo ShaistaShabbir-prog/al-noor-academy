@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Al-Noor Academy — Online Quran Classes Worldwide</title>
+  <meta name="description" content="Professional online Quran classes for Hifz, Nazra, Tajweed and Tafseer. Qualified teachers from Pakistan. UK, USA, Canada, Europe, Australia."/>
+  <meta name="keywords" content="online quran classes, hifz online, quran teacher, tajweed, nazra, tafseer, UK USA Canada, learn quran online"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --green:   #1a6b3c;
+      --green2:  #0f4d2a;
+      --gold:    #c9a84c;
+      --gold2:   #f0c060;
+      --cream:   #fdf8f0;
+      --dark:    #0a1a12;
+      --text:    #1c2b22;
+      --muted:   #5a7a65;
+      --border:  #d4e8db;
+      --white:   #ffffff;
+      --shadow:  0 8px 40px rgba(0,0,0,0.12);
+    }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Poppins',sans-serif; color:var(--text); background:var(--white); line-height:1.6; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top:0; left:0; right:0; z-index:1000;
+      background: rgba(10,26,18,0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      padding: 0 5%;
+      display: flex; align-items:center; justify-content:space-between;
+      height: 70px;
+    }
+    .logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+    .logo-icon { font-size:2rem; }
+    .logo-text { color:var(--white); }
+    .logo-text .en { font-size:1.15rem; font-weight:700; letter-spacing:.02em; }
+    .logo-text .ar { font-family:'Amiri',serif; font-size:1rem; color:var(--gold); }
+    .nav-links { display:flex; align-items:center; gap:2rem; }
+    .nav-links a { color:rgba(255,255,255,.8); text-decoration:none; font-size:.88rem; font-weight:500; transition:color .2s; }
+    .nav-links a:hover { color:var(--gold); }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: var(--dark) !important; font-weight:700 !important;
+      padding: 8px 20px; border-radius:25px;
+    }
+    .nav-cta:hover { opacity:.9; }
+    .hamburger { display:none; cursor:pointer; color:white; font-size:1.5rem; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(135deg, rgba(10,26,18,0.93) 0%, rgba(15,77,42,0.88) 100%),
+        url('https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=1600&q=80') center/cover;
+      display: flex; align-items:center; justify-content:center;
+      text-align: center; padding: 100px 5% 60px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content:''; position:absolute; inset:0;
+      background: radial-gradient(ellipse at center, rgba(201,168,76,0.1) 0%, transparent 70%);
+    }
+    .hero-arabic {
+      font-family:'Amiri',serif; font-size:clamp(1.8rem,4vw,3rem);
+      color:var(--gold2); margin-bottom:1rem; line-height:1.8;
+      text-shadow: 0 2px 20px rgba(201,168,76,0.3);
+    }
+    .hero h1 {
+      font-size: clamp(2rem,5vw,3.8rem); font-weight:800;
+      color:var(--white); margin-bottom:1rem;
+      line-height:1.15;
+    }
+    .hero h1 span { color:var(--gold2); }
+    .hero p {
+      font-size: clamp(.95rem,2vw,1.2rem);
+      color:rgba(255,255,255,.85); max-width:650px; margin:0 auto 2.5rem;
+    }
+    .hero-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+    .btn-primary {
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      color:var(--dark); font-weight:700; font-size:1rem;
+      padding:14px 32px; border-radius:30px; text-decoration:none;
+      transition:all .3s; box-shadow:0 4px 20px rgba(201,168,76,0.4);
+    }
+    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(201,168,76,0.5); }
+    .btn-secondary {
+      background:rgba(255,255,255,.12); color:white; font-weight:600; font-size:1rem;
+      padding:14px 32px; border-radius:30px; text-decoration:none;
+      border:2px solid rgba(255,255,255,.3); transition:all .3s; backdrop-filter:blur(4px);
+    }
+    .btn-secondary:hover { background:rgba(255,255,255,.2); border-color:rgba(255,255,255,.5); }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background:var(--dark); padding:18px 5%;
+      display:flex; justify-content:center; gap:3rem; flex-wrap:wrap;
+    }
+    .trust-item { display:flex; align-items:center; gap:.6rem; color:rgba(255,255,255,.8); font-size:.85rem; }
+    .trust-item .icon { font-size:1.2rem; }
+    .trust-item strong { color:var(--gold2); }
+
+    /* ── SECTION COMMON ── */
+    section { padding:80px 5%; }
+    .section-header { text-align:center; margin-bottom:3.5rem; }
+    .section-label {
+      display:inline-block; background:linear-gradient(135deg,var(--green),var(--green2));
+      color:white; font-size:.75rem; font-weight:700; letter-spacing:.12em;
+      padding:5px 16px; border-radius:20px; margin-bottom:1rem; text-transform:uppercase;
+    }
+    .section-header h2 { font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:800; margin-bottom:.75rem; }
+    .section-header p { color:var(--muted); font-size:1rem; max-width:580px; margin:0 auto; }
+    .arabic-sub { font-family:'Amiri',serif; color:var(--gold); font-size:1.3rem; margin-bottom:.4rem; }
+
+    /* ── COURSES ── */
+    .courses-grid {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem;
+      max-width:1200px; margin:0 auto;
+    }
+    .course-card {
+      background:var(--white); border:1.5px solid var(--border); border-radius:20px;
+      padding:2rem; text-align:center; transition:all .3s;
+      box-shadow:0 2px 16px rgba(0,0,0,.06);
+    }
+    .course-card:hover {
+      transform:translateY(-6px); border-color:var(--green);
+      box-shadow:0 12px 40px rgba(26,107,60,.15);
+    }
+    .course-icon {
+      width:70px; height:70px; border-radius:50%;
+      background:linear-gradient(135deg,var(--green),var(--green2));
+      display:flex; align-items:center; justify-content:center;
+      font-size:2rem; margin:0 auto 1.2rem; color:white;
+    }
+    .course-card h3 { font-size:1.2rem; font-weight:700; margin-bottom:.3rem; }
+    .course-arabic { font-family:'Amiri',serif; color:var(--gold); font-size:1.1rem; margin-bottom:.8rem; }
+    .course-card p { color:var(--muted); font-size:.88rem; margin-bottom:1.2rem; }
+    .course-details { list-style:none; text-align:left; margin-bottom:1.5rem; }
+    .course-details li { color:var(--muted); font-size:.83rem; padding:.2rem 0; }
+    .course-details li::before { content:'✓ '; color:var(--green); font-weight:700; }
+    .course-badge {
+      background:var(--cream); border:1px solid var(--border);
+      border-radius:20px; padding:4px 14px; font-size:.78rem;
+      color:var(--green); font-weight:600; display:inline-block;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how-section { background:var(--cream); }
+    .steps-grid {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:2rem; max-width:1100px; margin:0 auto;
+    }
+    .step-card { text-align:center; }
+    .step-num {
+      width:56px; height:56px; border-radius:50%;
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      color:var(--dark); font-weight:800; font-size:1.3rem;
+      display:flex; align-items:center; justify-content:center; margin:0 auto 1rem;
+    }
+    .step-card h3 { font-size:1rem; font-weight:700; margin-bottom:.5rem; }
+    .step-card p { color:var(--muted); font-size:.85rem; }
+
+    /* ── TEACHERS ── */
+    .teachers-grid {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:1.5rem; max-width:1000px; margin:0 auto;
+    }
+    .teacher-card {
+      background:var(--white); border:1.5px solid var(--border); border-radius:20px;
+      padding:2rem; text-align:center; box-shadow:0 2px 16px rgba(0,0,0,.06);
+    }
+    .teacher-avatar {
+      width:80px; height:80px; border-radius:50%;
+      background:linear-gradient(135deg,var(--green),var(--green2));
+      display:flex; align-items:center; justify-content:center;
+      font-size:2.5rem; margin:0 auto 1rem;
+    }
+    .teacher-card h3 { font-weight:700; margin-bottom:.3rem; }
+    .teacher-spec { color:var(--gold); font-size:.85rem; font-weight:600; margin-bottom:.75rem; }
+    .teacher-card p { color:var(--muted); font-size:.83rem; }
+    .teacher-badges { display:flex; flex-wrap:wrap; gap:.4rem; justify-content:center; margin-top:.8rem; }
+    .teacher-badge {
+      background:var(--cream); border:1px solid var(--border);
+      border-radius:12px; padding:3px 10px; font-size:.72rem; color:var(--green); font-weight:600;
+    }
+
+    /* ── COUNTRIES ── */
+    .countries-section { background:var(--dark); }
+    .countries-section .section-header h2 { color:white; }
+    .countries-section .section-header p { color:rgba(255,255,255,.6); }
+    .countries-grid {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:1rem; max-width:900px; margin:0 auto;
+    }
+    .country-card {
+      background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12);
+      border-radius:14px; padding:1.2rem 1rem; text-align:center; color:white;
+      transition:all .2s;
+    }
+    .country-card:hover { background:rgba(201,168,76,.15); border-color:var(--gold); }
+    .country-flag { font-size:2rem; margin-bottom:.4rem; }
+    .country-name { font-size:.85rem; font-weight:600; }
+
+    /* ── PRICING ── */
+    .pricing-grid {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+      gap:1.5rem; max-width:1000px; margin:0 auto;
+    }
+    .price-card {
+      background:var(--white); border:2px solid var(--border); border-radius:24px;
+      padding:2.5rem 2rem; text-align:center; position:relative; transition:all .3s;
+    }
+    .price-card.featured {
+      border-color:var(--green); background:linear-gradient(145deg,#f0faf4,#fff);
+      box-shadow:0 8px 40px rgba(26,107,60,.15); transform:scale(1.03);
+    }
+    .popular-badge {
+      position:absolute; top:-14px; left:50%; transform:translateX(-50%);
+      background:linear-gradient(135deg,var(--green),var(--green2));
+      color:white; font-size:.75rem; font-weight:700; padding:5px 18px; border-radius:20px;
+    }
+    .price-card h3 { font-size:1.1rem; font-weight:700; margin-bottom:.4rem; }
+    .price-amount { font-size:2.8rem; font-weight:800; color:var(--green); margin:.8rem 0; }
+    .price-amount small { font-size:1rem; font-weight:400; color:var(--muted); }
+    .price-features { list-style:none; text-align:left; margin:1.2rem 0 1.8rem; }
+    .price-features li { padding:.35rem 0; font-size:.87rem; border-bottom:1px solid var(--border); }
+    .price-features li::before { content:'✓ '; color:var(--green); font-weight:700; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-section { background:var(--cream); }
+    .testimonials-grid {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:1.5rem; max-width:1100px; margin:0 auto;
+    }
+    .testimonial-card {
+      background:var(--white); border:1.5px solid var(--border); border-radius:18px;
+      padding:1.8rem; box-shadow:0 2px 16px rgba(0,0,0,.06);
+    }
+    .stars { color:var(--gold); font-size:1rem; margin-bottom:.75rem; }
+    .testimonial-text { font-size:.9rem; color:var(--text); font-style:italic; margin-bottom:1rem; line-height:1.7; }
+    .testimonial-author { display:flex; align-items:center; gap:.75rem; }
+    .author-avatar { width:42px; height:42px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:white; font-weight:700; }
+    .author-name { font-weight:700; font-size:.88rem; }
+    .author-loc { color:var(--muted); font-size:.78rem; }
+
+    /* ── CONTACT ── */
+    .contact-section { background:var(--dark); }
+    .contact-section .section-header h2 { color:white; }
+    .contact-section .section-header p { color:rgba(255,255,255,.6); }
+    .contact-grid {
+      display:grid; grid-template-columns:1fr 1fr; gap:3rem;
+      max-width:900px; margin:0 auto;
+    }
+    .contact-info { color:white; }
+    .contact-method {
+      display:flex; align-items:flex-start; gap:1rem;
+      padding:1.2rem; border-radius:14px;
+      background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1);
+      margin-bottom:1rem; text-decoration:none; color:white; transition:all .2s;
+    }
+    .contact-method:hover { background:rgba(201,168,76,.15); border-color:var(--gold); }
+    .contact-method-icon { font-size:1.8rem; }
+    .contact-method-text strong { display:block; font-size:.92rem; margin-bottom:.2rem; }
+    .contact-method-text span { color:rgba(255,255,255,.6); font-size:.82rem; }
+    .contact-form input, .contact-form select, .contact-form textarea {
+      width:100%; padding:12px 16px; border-radius:10px;
+      border:1.5px solid rgba(255,255,255,.15); background:rgba(255,255,255,.08);
+      color:white; font-family:'Poppins',sans-serif; font-size:.9rem; margin-bottom:1rem;
+      outline:none; transition:border-color .2s;
+    }
+    .contact-form input::placeholder, .contact-form textarea::placeholder { color:rgba(255,255,255,.4); }
+    .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { border-color:var(--gold); }
+    .contact-form select option { background:#0a1a12; color:white; }
+    .contact-form textarea { height:110px; resize:vertical; }
+    .submit-btn {
+      width:100%; padding:14px; border-radius:12px; font-weight:700; font-size:.95rem;
+      background:linear-gradient(135deg,#25D366,#1da851); color:white; border:none;
+      cursor:pointer; transition:all .3s; display:flex; align-items:center; justify-content:center; gap:.6rem;
+    }
+    .submit-btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(37,211,102,.4); }
+
+    /* ── FAQ ── */
+    .faq-list { max-width:720px; margin:0 auto; }
+    .faq-item { border:1.5px solid var(--border); border-radius:14px; margin-bottom:.8rem; overflow:hidden; }
+    .faq-q {
+      padding:1.1rem 1.4rem; font-weight:600; font-size:.92rem; cursor:pointer;
+      display:flex; justify-content:space-between; align-items:center;
+      background:var(--white); transition:background .2s;
+    }
+    .faq-q:hover { background:var(--cream); }
+    .faq-a { padding:0 1.4rem 1.1rem; color:var(--muted); font-size:.87rem; line-height:1.7; display:none; }
+    .faq-item.open .faq-a { display:block; }
+    .faq-item.open .faq-q { background:var(--cream); color:var(--green); }
+    .faq-arrow { transition:transform .2s; }
+    .faq-item.open .faq-arrow { transform:rotate(180deg); }
+
+    /* ── FREE TRIAL ── */
+    .trial-section {
+      background:linear-gradient(135deg,var(--green) 0%,var(--green2) 100%);
+      text-align:center; padding:80px 5%;
+    }
+    .trial-section h2 { color:white; font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:800; margin-bottom:1rem; }
+    .trial-section p { color:rgba(255,255,255,.85); margin-bottom:2rem; font-size:1rem; }
+    .trial-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+    .trial-wa {
+      background:#25D366; color:white; font-weight:700; font-size:1rem;
+      padding:14px 30px; border-radius:30px; text-decoration:none; transition:all .3s;
+      display:flex; align-items:center; gap:.6rem; box-shadow:0 4px 20px rgba(37,211,102,.4);
+    }
+    .trial-wa:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(37,211,102,.5); }
+    .trial-email {
+      background:rgba(255,255,255,.2); color:white; font-weight:700; font-size:1rem;
+      padding:14px 30px; border-radius:30px; text-decoration:none;
+      border:2px solid rgba(255,255,255,.4); transition:all .3s;
+    }
+    .trial-email:hover { background:rgba(255,255,255,.3); }
+
+    /* ── FOOTER ── */
+    footer {
+      background:var(--dark); color:rgba(255,255,255,.7);
+      padding:50px 5% 30px; border-top:1px solid rgba(201,168,76,.2);
+    }
+    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:2.5rem; margin-bottom:2.5rem; }
+    .footer-brand .arabic { font-family:'Amiri',serif; color:var(--gold); font-size:1.4rem; margin-bottom:.5rem; }
+    .footer-brand p { font-size:.83rem; line-height:1.7; color:rgba(255,255,255,.5); margin-top:.5rem; }
+    .footer-col h4 { color:white; font-size:.88rem; font-weight:700; margin-bottom:1rem; }
+    .footer-col a { display:block; color:rgba(255,255,255,.55); font-size:.82rem; text-decoration:none; margin-bottom:.4rem; transition:color .2s; }
+    .footer-col a:hover { color:var(--gold); }
+    .footer-bottom { border-top:1px solid rgba(255,255,255,.1); padding-top:1.2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; font-size:.78rem; }
+    .footer-socials { display:flex; gap:.8rem; }
+    .social-link { width:34px; height:34px; border-radius:50%; background:rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center; color:white; text-decoration:none; font-size:1rem; transition:all .2s; }
+    .social-link:hover { background:var(--gold); color:var(--dark); }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:768px) {
+      .nav-links { display:none; }
+      .hamburger { display:block; }
+      .contact-grid { grid-template-columns:1fr; }
+      .footer-grid { grid-template-columns:1fr 1fr; }
+      .trust-bar { gap:1.5rem; }
+      .price-card.featured { transform:scale(1); }
+    }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .fade-in { opacity:0; transform:translateY(30px); transition:all .6s ease; }
+    .fade-in.visible { opacity:1; transform:translateY(0); }
+
+    /* ── FLOATING WHATSAPP ── */
+    .floating-wa {
+      position:fixed; bottom:24px; right:24px; z-index:9999;
+      width:60px; height:60px; border-radius:50%;
+      background:#25D366; color:white; text-decoration:none;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.8rem; box-shadow:0 4px 20px rgba(37,211,102,.5);
+      animation:pulse-wa 2s ease-in-out infinite;
+    }
+    @keyframes pulse-wa {
+      0%,100% { box-shadow:0 4px 20px rgba(37,211,102,.5); }
+      50%      { box-shadow:0 4px 40px rgba(37,211,102,.8), 0 0 0 10px rgba(37,211,102,.15); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── FLOATING WHATSAPP ── -->
+<a class="floating-wa" href="https://wa.me/4915906171828?text=Assalaamu%20Alaykum!%20I%20am%20interested%20in%20Online%20Quran%20classes.%20Please%20share%20details." target="_blank" title="Chat on WhatsApp" aria-label="WhatsApp">💬</a>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#" class="logo">
+    <span class="logo-icon">📖</span>
+    <div class="logo-text">
+      <div class="en">Al-Noor Academy</div>
+      <div class="ar">أكاديمية النور</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#courses">Courses</a>
+    <a href="#teachers">Teachers</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="nav-cta">📞 Free Trial</a>
+  </div>
+  <div class="hamburger" onclick="document.querySelector('.nav-links').style.display='flex';document.querySelector('.nav-links').style.flexDirection='column';document.querySelector('.nav-links').style.position='fixed';document.querySelector('.nav-links').style.inset='70px 0 0 0';document.querySelector('.nav-links').style.background='rgba(10,26,18,0.98)';document.querySelector('.nav-links').style.padding='2rem';document.querySelector('.nav-links').style.gap='1.5rem';this.textContent='✕';this.onclick=()=>{document.querySelector('.nav-links').removeAttribute('style');this.textContent='☰';this.onclick=arguments.callee.caller;}">☰</div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="home">
+  <div>
+    <div class="hero-arabic">﴿ اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ ﴾</div>
+    <p style="font-family:'Amiri',serif;color:rgba(240,192,96,.7);margin-bottom:2rem;font-size:.95rem">"Read in the name of your Lord who created" — Surah Al-Alaq 96:1</p>
+    <h1>Learn Quran Online<br/><span>From Pakistan's Best Teachers</span></h1>
+    <p>Professional Hifz · Nazra · Tajweed · Tafseer classes via Zoom & WhatsApp<br/>For families across UK, USA, Canada, Europe, Australia & beyond</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/4915906171828?text=Assalaamu%20Alaykum!%20I%20want%20to%20book%20a%20FREE%20trial%20class." class="btn-primary" target="_blank">💬 Book Free Trial on WhatsApp</a>
+      <a href="#courses" class="btn-secondary">📚 Explore Courses</a>
+    </div>
+    <p style="color:rgba(255,255,255,.45);font-size:.78rem;margin-top:1.5rem">✓ No credit card required &nbsp;·&nbsp; ✓ First class FREE &nbsp;·&nbsp; ✓ Certified teachers</p>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="icon">🌍</span><span>Serving <strong>15+ countries</strong></span></div>
+  <div class="trust-item"><span class="icon">👩‍🏫</span><span><strong>100% certified</strong> teachers</span></div>
+  <div class="trust-item"><span class="icon">🕐</span><span>Flexible <strong>timings</strong></span></div>
+  <div class="trust-item"><span class="icon">💬</span><span>Zoom & <strong>WhatsApp</strong> classes</span></div>
+  <div class="trust-item"><span class="icon">⭐</span><span><strong>5-star</strong> rated</span></div>
+</div>
+
+<!-- ── COURSES ── -->
+<section id="courses">
+  <div class="section-header fade-in">
+    <span class="section-label">📚 Our Programmes</span>
+    <div class="arabic-sub">برامجنا الدراسية</div>
+    <h2>Complete Quran Education</h2>
+    <p>Structured programmes for all ages and levels — from complete beginners to advanced Hifz</p>
+  </div>
+  <div class="courses-grid">
+    <div class="course-card fade-in">
+      <div class="course-icon">📖</div>
+      <h3>Nazra Quran</h3>
+      <div class="course-arabic">ناظرہ قرآن</div>
+      <p>Learn to read the Quran with correct pronunciation and basic Tajweed rules.</p>
+      <ul class="course-details">
+        <li>Arabic alphabets & recognition</li>
+        <li>Harakat (short vowels) & Madd</li>
+        <li>Basic Tajweed rules</li>
+        <li>Complete Quran recitation</li>
+        <li>Suitable for all ages (5+)</li>
+      </ul>
+      <span class="course-badge">🕐 3–6 months to complete Quran</span>
+    </div>
+    <div class="course-card fade-in">
+      <div class="course-icon">🏆</div>
+      <h3>Hifz ul Quran</h3>
+      <div class="course-arabic">حفظ القرآن الكريم</div>
+      <p>Memorise the Holy Quran with qualified Huffaz teachers using proven techniques.</p>
+      <ul class="course-details">
+        <li>Daily new lesson (sabaq)</li>
+        <li>Revision (Sabqi & Manzil)</li>
+        <li>Muraaja'ah system</li>
+        <li>Ijazah upon completion</li>
+        <li>Ages 6–40 welcome</li>
+      </ul>
+      <span class="course-badge">🕐 2–5 years to complete Hifz</span>
+    </div>
+    <div class="course-card fade-in">
+      <div class="course-icon">🎵</div>
+      <h3>Tajweed Rules</h3>
+      <div class="course-arabic">علم التجويد</div>
+      <p>Master the rules of Quranic recitation — the science of beautifying your recitation.</p>
+      <ul class="course-details">
+        <li>Makharij al-Huroof</li>
+        <li>Sifaat al-Huroof</li>
+        <li>Noon & Meem Mushaddadah</li>
+        <li>Rules of Madd</li>
+        <li>Waqf & Ibtidaa</li>
+      </ul>
+      <span class="course-badge">🕐 3–9 months intensive</span>
+    </div>
+    <div class="course-card fade-in">
+      <div class="course-icon">📜</div>
+      <h3>Tafseer & Translation</h3>
+      <div class="course-arabic">تفسير القرآن</div>
+      <p>Understand the meaning and wisdom of the Quran in Urdu and English.</p>
+      <ul class="course-details">
+        <li>Word-by-word translation</li>
+        <li>Urdu Tafseer (IBN Kathir)</li>
+        <li>Asbab al-Nuzool</li>
+        <li>English explanation option</li>
+        <li>For adults & teens</li>
+      </ul>
+      <span class="course-badge">🕐 1 Juz per 3 months</span>
+    </div>
+    <div class="course-card fade-in">
+      <div class="course-icon">🌙</div>
+      <h3>Islamic Studies</h3>
+      <div class="course-arabic">الدراسات الإسلامية</div>
+      <p>Learn the fundamentals of Islam — Aqeedah, Fiqh, Seerah, and daily supplications.</p>
+      <ul class="course-details">
+        <li>Pillars of Islam & Iman</li>
+        <li>Daily Duas & Adhkar</li>
+        <li>Seerah of the Prophet ﷺ</li>
+        <li>Basic Fiqh (Hanafi)</li>
+        <li>Children's Islamic curriculum</li>
+      </ul>
+      <span class="course-badge">🕐 Ongoing weekly classes</span>
+    </div>
+    <div class="course-card fade-in">
+      <div class="course-icon">👶</div>
+      <h3>Kids' Quran & Kalima</h3>
+      <div class="course-arabic">تعليم الأطفال</div>
+      <p>Fun, interactive Quran learning for young children aged 4–10 years.</p>
+      <ul class="course-details">
+        <li>Six Kalimas</li>
+        <li>Short Surahs (Juz Amma)</li>
+        <li>Namaz (Salah) training</li>
+        <li>Interactive Quran games</li>
+        <li>Female teachers available</li>
+      </ul>
+      <span class="course-badge">🕐 Ages 4+ welcome</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="how-section">
+  <div class="section-header fade-in">
+    <span class="section-label">⚡ Simple Process</span>
+    <h2>Start in 4 Easy Steps</h2>
+    <p>From enquiry to your first class in under 24 hours</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step-card fade-in">
+      <div class="step-num">1</div>
+      <h3>Message Us</h3>
+      <p>Send a WhatsApp message or fill the contact form. Tell us your course interest and availability.</p>
+    </div>
+    <div class="step-card fade-in">
+      <div class="step-num">2</div>
+      <h3>Assessment</h3>
+      <p>We assess your current level and match you with the perfect teacher for your needs.</p>
+    </div>
+    <div class="step-card fade-in">
+      <div class="step-num">3</div>
+      <h3>Free Trial Class</h3>
+      <p>Enjoy one FREE 30-minute trial class on Zoom or WhatsApp — no payment required.</p>
+    </div>
+    <div class="step-card fade-in">
+      <div class="step-num">4</div>
+      <h3>Enroll & Begin</h3>
+      <p>Choose your package, schedule your regular classes, and start your Quran journey!</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── TEACHERS ── -->
+<section id="teachers">
+  <div class="section-header fade-in">
+    <span class="section-label">👩‍🏫 Our Teachers</span>
+    <div class="arabic-sub">معلمونا المؤهلون</div>
+    <h2>Qualified, Experienced & Caring</h2>
+    <p>All teachers are Hafiz/Hafizah with Ijazah — trained in the Hafs an Asim recitation</p>
+  </div>
+  <div class="teachers-grid">
+    <div class="teacher-card fade-in">
+      <div class="teacher-avatar">👨</div>
+      <h3>Qari Muhammad Ibrahim</h3>
+      <div class="teacher-spec">Hifz & Tajweed Specialist</div>
+      <p>10+ years experience. Hafiz ul Quran with Ijazah Asaneed. Specialises in Hifz for all ages.</p>
+      <div class="teacher-badges">
+        <span class="teacher-badge">Hafiz</span>
+        <span class="teacher-badge">Ijazah</span>
+        <span class="teacher-badge">10+ years</span>
+      </div>
+    </div>
+    <div class="teacher-card fade-in">
+      <div class="teacher-avatar">👩</div>
+      <h3>Ustazah Fatima Zahra</h3>
+      <div class="teacher-spec">Female Quran Teacher — Kids Specialist</div>
+      <p>Hafizah with 7 years of teaching experience. Expert in teaching young children and sisters.</p>
+      <div class="teacher-badges">
+        <span class="teacher-badge">Hafizah</span>
+        <span class="teacher-badge">Kids Expert</span>
+        <span class="teacher-badge">Sisters Only</span>
+      </div>
+    </div>
+    <div class="teacher-card fade-in">
+      <div class="teacher-avatar">👨</div>
+      <h3>Qari Abdullah Siddiqui</h3>
+      <div class="teacher-spec">Tafseer & Translation</div>
+      <p>Scholar with specialisation in Tafseer Ibn Kathir. Teaches in Urdu and English.</p>
+      <div class="teacher-badges">
+        <span class="teacher-badge">Alim</span>
+        <span class="teacher-badge">Tafseer</span>
+        <span class="teacher-badge">English</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COUNTRIES ── -->
+<section class="countries-section">
+  <div class="section-header fade-in">
+    <span class="section-label">🌍 Worldwide Service</span>
+    <h2 style="color:white">We Teach Students Across the Globe</h2>
+    <p>Flexible timings to match every timezone — UK, USA, Canada, Europe, Australia & more</p>
+  </div>
+  <div class="countries-grid">
+    <div class="country-card"><div class="country-flag">🇬🇧</div><div class="country-name">United Kingdom</div></div>
+    <div class="country-card"><div class="country-flag">🇺🇸</div><div class="country-name">United States</div></div>
+    <div class="country-card"><div class="country-flag">🇨🇦</div><div class="country-name">Canada</div></div>
+    <div class="country-card"><div class="country-flag">🇦🇺</div><div class="country-name">Australia</div></div>
+    <div class="country-card"><div class="country-flag">🇩🇪</div><div class="country-name">Germany</div></div>
+    <div class="country-card"><div class="country-flag">🇸🇦</div><div class="country-name">Saudi Arabia</div></div>
+    <div class="country-card"><div class="country-flag">🇦🇪</div><div class="country-name">UAE</div></div>
+    <div class="country-card"><div class="country-flag">🇳🇱</div><div class="country-name">Netherlands</div></div>
+    <div class="country-card"><div class="country-flag">🇸🇪</div><div class="country-name">Sweden</div></div>
+    <div class="country-card"><div class="country-flag">🇳🇴</div><div class="country-name">Norway</div></div>
+    <div class="country-card"><div class="country-flag">🇮🇪</div><div class="country-name">Ireland</div></div>
+    <div class="country-card"><div class="country-flag">🌐</div><div class="country-name">& More…</div></div>
+  </div>
+  <p style="text-align:center;color:rgba(255,255,255,.5);margin-top:2rem;font-size:.85rem">All timings converted to your local timezone · 24/7 enquiries via WhatsApp</p>
+</section>
+
+<!-- ── PRICING ── -->
+<section id="pricing" style="background:var(--cream)">
+  <div class="section-header fade-in">
+    <span class="section-label">💰 Affordable Packages</span>
+    <h2>Clear, Simple Pricing</h2>
+    <p>No hidden fees. Contact us on WhatsApp for exact pricing in your currency (GBP, USD, EUR, CAD).</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="price-card fade-in">
+      <h3>Starter</h3>
+      <p style="color:var(--muted);font-size:.85rem;margin-bottom:.5rem">2 classes per week</p>
+      <div class="price-amount">Contact<small> for price</small></div>
+      <ul class="price-features">
+        <li>2 × 30-min classes/week</li>
+        <li>WhatsApp or Zoom</li>
+        <li>1 subject (Nazra / Tajweed)</li>
+        <li>Monthly progress report</li>
+        <li>Free trial class</li>
+      </ul>
+      <a href="https://wa.me/4915906171828?text=I%20am%20interested%20in%20the%20Starter%20package.%20Please%20share%20pricing." class="btn-primary" target="_blank">💬 Get Price on WhatsApp</a>
+    </div>
+    <div class="price-card featured fade-in">
+      <div class="popular-badge">⭐ Most Popular</div>
+      <h3>Family Plan</h3>
+      <p style="color:var(--muted);font-size:.85rem;margin-bottom:.5rem">Up to 3 children</p>
+      <div class="price-amount">Contact<small> for price</small></div>
+      <ul class="price-features">
+        <li>Up to 3 children</li>
+        <li>5 × 30-min classes/week per child</li>
+        <li>WhatsApp + Zoom access</li>
+        <li>All subjects available</li>
+        <li>Female teacher option</li>
+        <li>Monthly progress reports</li>
+        <li>Free trial class</li>
+      </ul>
+      <a href="https://wa.me/4915906171828?text=I%20am%20interested%20in%20the%20Family%20Plan.%20Please%20share%20pricing." class="btn-primary" target="_blank">💬 Get Price on WhatsApp</a>
+    </div>
+    <div class="price-card fade-in">
+      <h3>Intensive Hifz</h3>
+      <p style="color:var(--muted);font-size:.85rem;margin-bottom:.5rem">Daily Hifz programme</p>
+      <div class="price-amount">Contact<small> for price</small></div>
+      <ul class="price-features">
+        <li>6 × 45-min classes/week</li>
+        <li>Dedicated Hafiz teacher</li>
+        <li>Daily sabaq + revision</li>
+        <li>Parent progress updates</li>
+        <li>Ijazah upon completion</li>
+        <li>Free trial class</li>
+      </ul>
+      <a href="https://wa.me/4915906171828?text=I%20am%20interested%20in%20the%20Intensive%20Hifz%20programme.%20Please%20share%20pricing." class="btn-primary" target="_blank">💬 Get Price on WhatsApp</a>
+    </div>
+  </div>
+  <p style="text-align:center;color:var(--muted);margin-top:2rem;font-size:.83rem">💡 Prices quoted in your local currency · Discounts available for siblings</p>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="testimonials-section" id="testimonials">
+  <div class="section-header fade-in">
+    <span class="section-label">💬 Reviews</span>
+    <h2>What Parents & Students Say</h2>
+    <p>Alhamdulillah — hundreds of families across the world trust Al-Noor Academy</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card fade-in">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-text">"My daughter started with zero Quran knowledge. After 8 months with Ustazah Fatima, she can read the Quran beautifully. The teacher is so patient and kind. Highly recommended for sisters and children!"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">A</div>
+        <div><div class="author-name">Amina Hussain</div><div class="author-loc">🇬🇧 Birmingham, UK</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card fade-in">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-text">"Alhamdulillah my son memorised 10 Juz in one year with Qari Ibrahim. The Zoom classes are very clear and the teacher tracks his progress daily. I get a WhatsApp update every week. Excellent service!"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">Z</div>
+        <div><div class="author-name">Zubair Ahmed</div><div class="author-loc">🇺🇸 Houston, Texas</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card fade-in">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-text">"I am an adult learner wanting to improve my Tajweed. The teacher explains everything in Urdu and English. Classes are at 9pm which suits my work schedule perfectly. JazakAllah Khair!"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">S</div>
+        <div><div class="author-name">Sara Khan</div><div class="author-loc">🇨🇦 Toronto, Canada</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card fade-in">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-text">"We enrolled all three of our children. The family package is very affordable and the quality is excellent. Our youngest is 5 and loves the interactive Kalima lessons. MashaAllah wonderful academy!"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">F</div>
+        <div><div class="author-name">Farhan Malik</div><div class="author-loc">🇩🇪 Frankfurt, Germany</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq">
+  <div class="section-header fade-in">
+    <span class="section-label">❓ FAQ</span>
+    <h2>Frequently Asked Questions</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What platform do you use for classes? <span class="faq-arrow">▼</span></div><div class="faq-a">We use <strong>Zoom</strong> for video classes and <strong>WhatsApp video call</strong> for more informal/flexible sessions. You can choose whichever you prefer. Both work excellently for Quran teaching.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What age groups do you teach? <span class="faq-arrow">▼</span></div><div class="faq-a">We teach students of all ages — from children as young as 4 years old to adults in their 60s. We have dedicated children's teachers and adult specialists. It is never too late to learn the Quran!</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do you offer female teachers for sisters? <span class="faq-arrow">▼</span></div><div class="faq-a">Yes, absolutely. We have qualified female teachers (Hafizah with Ijazah) available for sisters and for children who prefer a female teacher. Please specify this when you enquire and we will match you accordingly.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How do timings work with different time zones? <span class="faq-arrow">▼</span></div><div class="faq-a">Our teachers are based in Pakistan (PKT timezone) and are available from 6am to 11pm PKT, which covers mornings in Europe/UK, evenings in North America, and afternoons in the Gulf. We will agree a fixed weekly slot that suits you.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is the free trial really free? <span class="faq-arrow">▼</span></div><div class="faq-a">Yes, 100% free — no credit card, no payment, no obligation. You get one 30-minute trial class to meet your teacher and assess your level. After that, you decide if you want to continue.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What if I miss a class? <span class="faq-arrow">▼</span></div><div class="faq-a">Life happens! If you give us at least 12 hours notice, we will reschedule the class at no extra charge. Emergency absences are handled on a case-by-case basis with full understanding.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Which Tajweed rules / Qira'ah do you teach? <span class="faq-arrow">▼</span></div><div class="faq-a">We teach the Hafs an Asim recitation (the most widely used in Pakistan, UK and most of the world). All Tajweed rules are taught according to the standard classical manuals (Al-Jazariyyah, Tuhfat ul Atfaal).</div></div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section class="contact-section" id="contact">
+  <div class="section-header fade-in">
+    <span class="section-label">📞 Get In Touch</span>
+    <h2 style="color:white">Start Your Quran Journey Today</h2>
+    <p>Message us on WhatsApp for the fastest response — we reply in Urdu, English, Arabic</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info fade-in">
+      <a class="contact-method" href="https://wa.me/4915906171828?text=Assalaamu%20Alaykum!%20I%20am%20interested%20in%20Online%20Quran%20classes." target="_blank">
+        <div class="contact-method-icon">📱</div>
+        <div class="contact-method-text">
+          <strong>WhatsApp (Fastest)</strong>
+          <span>+49 159 0617 1828 · Typically within 1–2 hours</span>
+        </div>
+      </a>
+      <a class="contact-method" href="mailto:vistavisa7@gmail.com">
+        <div class="contact-method-icon">✉️</div>
+        <div class="contact-method-text">
+          <strong>Email</strong>
+          <span>vistavisa7@gmail.com · Within 24 hours</span>
+        </div>
+      </a>
+      <div class="contact-method" style="cursor:default">
+        <div class="contact-method-icon">🕐</div>
+        <div class="contact-method-text">
+          <strong>Class Timings</strong>
+          <span>6:00 AM – 11:00 PM PKT · 7 days a week</span>
+        </div>
+      </div>
+      <div class="contact-method" style="cursor:default">
+        <div class="contact-method-icon">🌐</div>
+        <div class="contact-method-text">
+          <strong>Languages</strong>
+          <span>Urdu · English · Arabic</span>
+        </div>
+      </div>
+      <div style="margin-top:1.5rem;padding:1.2rem;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);border-radius:12px">
+        <p style="color:#4ade80;font-size:.85rem;font-weight:600;margin-bottom:.3rem">📱 Send this to WhatsApp:</p>
+        <p style="color:rgba(255,255,255,.7);font-size:.82rem;font-style:italic">"Assalaamu Alaykum! I am interested in [Hifz/Nazra/Tajweed] classes for [myself/my child aged X]. I am based in [your country]. Please share details and availability."</p>
+      </div>
+    </div>
+    <div class="fade-in">
+      <div class="contact-form">
+        <input type="text" id="cf-name" placeholder="Your full name *" required/>
+        <input type="tel" id="cf-wa" placeholder="WhatsApp number (with country code) *" required/>
+        <input type="email" id="cf-email" placeholder="Email address"/>
+        <select id="cf-course">
+          <option value="">Select course of interest *</option>
+          <option>Nazra Quran (Read the Quran)</option>
+          <option>Hifz ul Quran (Memorisation)</option>
+          <option>Tajweed Rules</option>
+          <option>Tafseer & Translation</option>
+          <option>Islamic Studies</option>
+          <option>Kids' Quran & Kalima</option>
+        </select>
+        <select id="cf-country">
+          <option value="">Your country *</option>
+          <option>United Kingdom</option>
+          <option>United States</option>
+          <option>Canada</option>
+          <option>Australia</option>
+          <option>Germany</option>
+          <option>Netherlands</option>
+          <option>Sweden</option>
+          <option>Norway</option>
+          <option>Saudi Arabia</option>
+          <option>UAE</option>
+          <option>Other</option>
+        </select>
+        <textarea id="cf-msg" placeholder="Anything else you'd like us to know (age, level, preferred timing)…"></textarea>
+        <button class="submit-btn" onclick="sendWA()">
+          <span>📲</span> Send Enquiry via WhatsApp
+        </button>
+        <p style="text-align:center;color:rgba(255,255,255,.35);font-size:.75rem;margin-top:.6rem">This opens WhatsApp with your details pre-filled</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FREE TRIAL CTA ── -->
+<section class="trial-section">
+  <h2>📖 Book Your FREE Trial Class Now</h2>
+  <p>No payment. No commitment. Just one beautiful class to experience Al-Noor Academy.</p>
+  <div class="trial-btns">
+    <a href="https://wa.me/4915906171828?text=Assalaamu%20Alaykum!%20I%20would%20like%20to%20book%20a%20FREE%20trial%20Quran%20class%20please." class="trial-wa" target="_blank">
+      <span>📱</span> Book on WhatsApp
+    </a>
+    <a href="mailto:vistavisa7@gmail.com?subject=Free Trial Class Enquiry — Al-Noor Academy" class="trial-email">
+      ✉️ Email Us
+    </a>
+  </div>
+  <p style="margin-top:1.5rem;font-size:.8rem;opacity:.6">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ · In the name of Allah, the Most Gracious, the Most Merciful</p>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="arabic">أكاديمية النور</div>
+      <div style="color:white;font-weight:700;font-size:1rem">Al-Noor Academy</div>
+      <p>Professional online Quran education for Pakistani families and Muslims worldwide. Qualified teachers · Flexible timings · Proven results.</p>
+      <div class="footer-socials" style="margin-top:1rem">
+        <a href="https://wa.me/4915906171828" class="social-link" target="_blank">📱</a>
+        <a href="mailto:vistavisa7@gmail.com" class="social-link">✉️</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Courses</h4>
+      <a href="#courses">Nazra Quran</a>
+      <a href="#courses">Hifz ul Quran</a>
+      <a href="#courses">Tajweed Rules</a>
+      <a href="#courses">Tafseer</a>
+      <a href="#courses">Islamic Studies</a>
+      <a href="#courses">Kids' Quran</a>
+    </div>
+    <div class="footer-col">
+      <h4>Academy</h4>
+      <a href="#teachers">Our Teachers</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="https://wa.me/4915906171828" target="_blank">📱 WhatsApp</a>
+      <a href="mailto:vistavisa7@gmail.com">✉️ Email</a>
+      <a href="#contact">📋 Enquiry Form</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 Al-Noor Academy · All rights reserved</div>
+    <div style="color:var(--gold);font-family:'Amiri',serif">﴿ وَعَلَّمَكَ مَا لَمْ تَكُن تَعْلَمُ ﴾</div>
+  </div>
+</footer>
+
+<script>
+// WhatsApp form send
+function sendWA() {
+  const name    = document.getElementById('cf-name').value.trim();
+  const wa      = document.getElementById('cf-wa').value.trim();
+  const email   = document.getElementById('cf-email').value.trim();
+  const course  = document.getElementById('cf-course').value;
+  const country = document.getElementById('cf-country').value;
+  const msg     = document.getElementById('cf-msg').value.trim();
+
+  if (!name || !wa || !course || !country) {
+    alert('Please fill in all required fields (*)');
+    return;
+  }
+
+  const text = encodeURIComponent(
+    `Assalaamu Alaykum! I would like to enquire about Al-Noor Academy.\n\n` +
+    `👤 Name: ${name}\n📱 WhatsApp: ${wa}${email ? '\n✉️ Email: '+email : ''}\n` +
+    `📚 Course: ${course}\n🌍 Country: ${country}${msg ? '\n💬 Note: '+msg : ''}\n\n` +
+    `Please share availability and pricing. JazakAllah Khair!`
+  );
+  window.open(`https://wa.me/4915906171828?text=${text}`, '_blank');
+}
+
+// Scroll animations
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
