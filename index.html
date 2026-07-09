@@ -234,8 +234,8 @@
     /* ── TESTIMONIALS ── */
     .testimonials-section { background:var(--cream); }
     .testimonials-grid {
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:1.5rem; max-width:1100px; margin:0 auto;
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1.5rem; max-width:1200px; margin:0 auto;
     }
     .testimonial-card {
       background:var(--white); border:1.5px solid var(--border); border-radius:18px;
@@ -344,6 +344,7 @@
       .footer-grid { grid-template-columns:1fr 1fr; }
       .trust-bar { gap:1.5rem; }
       .price-card.featured { transform:scale(1); }
+      #faq .section-header ~ div { grid-template-columns:1fr !important; }
     }
 
     /* ── SCROLL ANIMATIONS ── */
@@ -368,7 +369,22 @@
 <body>
 
 <!-- ── FLOATING WHATSAPP ── -->
-<a class="floating-wa" href="https://wa.me/4915906171828?text=Assalaamu%20Alaykum!%20I%20am%20interested%20in%20Online%20Quran%20classes.%20Please%20share%20details." target="_blank" title="Chat on WhatsApp" aria-label="WhatsApp">💬</a>
+<div id="float-wa" style="position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:.5rem">
+  <div id="wa-options" style="display:none;flex-direction:column;gap:.5rem;align-items:flex-end">
+    <a href="https://wa.me/4915906171828?text=Assalaamu%20Alaykum!%20I%20am%20interested%20in%20Al-Noor%20Academy%20Quran%20classes." target="_blank"
+      style="background:#25D366;color:#fff;padding:9px 16px;border-radius:20px;text-decoration:none;font-size:.82rem;font-weight:700;white-space:nowrap;box-shadow:0 2px 12px rgba(37,211,102,.4)">
+      📱 Germany +49 159 0617 1828
+    </a>
+    <a href="https://wa.me/923415915690?text=Assalaamu%20Alaykum!%20Al-Noor%20Academy%20Quran%20classes%20ke%20baray%20mein%20maloomat%20chahiye." target="_blank"
+      style="background:#128C7E;color:#fff;padding:9px 16px;border-radius:20px;text-decoration:none;font-size:.82rem;font-weight:700;white-space:nowrap;box-shadow:0 2px 12px rgba(18,140,126,.4)">
+      📱 Pakistan +92 341 5915690
+    </a>
+  </div>
+  <button onclick="var o=document.getElementById('wa-options');o.style.display=o.style.display==='none'?'flex':'none'"
+    style="width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;border:none;font-size:1.8rem;cursor:pointer;box-shadow:0 4px 20px rgba(37,211,102,.5);animation:pulse-wa 2s ease-in-out infinite">
+    💬
+  </button>
+</div>
 
 <!-- ── NAV ── -->
 <nav>
@@ -605,6 +621,7 @@
     <div class="country-card"><div class="country-flag">🇸🇪</div><div class="country-name">Sweden</div></div>
     <div class="country-card"><div class="country-flag">🇳🇴</div><div class="country-name">Norway</div></div>
     <div class="country-card"><div class="country-flag">🇮🇪</div><div class="country-name">Ireland</div></div>
+    <div class="country-card"><div class="country-flag">🇵🇰</div><div class="country-name">Pakistan</div></div>
     <div class="country-card"><div class="country-flag">🌐</div><div class="country-name">& More…</div></div>
   </div>
   <p style="text-align:center;color:rgba(255,255,255,.5);margin-top:2rem;font-size:.85rem">All timings converted to your local timezone · 24/7 enquiries via WhatsApp</p>
@@ -675,55 +692,200 @@
   <div class="testimonials-grid">
     <div class="testimonial-card fade-in">
       <div class="stars">★★★★★</div>
-      <div class="testimonial-text">"My daughter started with zero Quran knowledge. After 8 months with Ustazah Fatima, she can read the Quran beautifully. The teacher is so patient and kind. Highly recommended for sisters and children!"</div>
+      <div class="testimonial-text">"Alhamdulillah! Ustazah Gulbahar ne meri beti ko itni mehnat aur mohabbat se Quran padhaya. Sirf 6 mahine mein woh poora Surah Baqarah tajweed ke saath parh leti hai. Bahut shukriya — dil se dua hai aap ke liye!"</div>
       <div class="testimonial-author">
-        <div class="author-avatar">A</div>
-        <div><div class="author-name">Amina Hussain</div><div class="author-loc">🇬🇧 Birmingham, UK</div></div>
+        <div class="author-avatar" style="background:#1a6b3c">N</div>
+        <div><div class="author-name">Nazia Bibi</div><div class="author-loc">🇬🇧 Bradford, UK</div></div>
       </div>
     </div>
     <div class="testimonial-card fade-in">
       <div class="stars">★★★★★</div>
-      <div class="testimonial-text">"Alhamdulillah my son memorised 10 Juz in one year with Qari Ibrahim. The Zoom classes are very clear and the teacher tracks his progress daily. I get a WhatsApp update every week. Excellent service!"</div>
+      <div class="testimonial-text">"My son is doing Hifz with Hafiz Ahsan Sammer. MashaAllah his progress is amazing — 5 Juz memorised in 8 months. Hafiz sahib is very dedicated, sends daily WhatsApp updates, and the Zoom quality is crystal clear. Best decision we made!"</div>
       <div class="testimonial-author">
-        <div class="author-avatar">Z</div>
-        <div><div class="author-name">Zubair Ahmed</div><div class="author-loc">🇺🇸 Houston, Texas</div></div>
+        <div class="author-avatar" style="background:#1a6b3c">T</div>
+        <div><div class="author-name">Tariq Mahmood</div><div class="author-loc">🇨🇦 Mississauga, Canada</div></div>
       </div>
     </div>
     <div class="testimonial-card fade-in">
       <div class="stars">★★★★★</div>
-      <div class="testimonial-text">"I am an adult learner wanting to improve my Tajweed. The teacher explains everything in Urdu and English. Classes are at 9pm which suits my work schedule perfectly. JazakAllah Khair!"</div>
+      <div class="testimonial-text">"Hafiza Maizam is the perfect teacher for our girls. She is so warm, patient and encouraging. My daughters (ages 6 and 9) both love their classes every day. They have learned all 6 Kalimahs and are now on Surah Yaseen. JazakAllah Khair!"</div>
       <div class="testimonial-author">
-        <div class="author-avatar">S</div>
-        <div><div class="author-name">Sara Khan</div><div class="author-loc">🇨🇦 Toronto, Canada</div></div>
+        <div class="author-avatar" style="background:#1a6b3c">R</div>
+        <div><div class="author-name">Rubina Akhtar</div><div class="author-loc">🇺🇸 Chicago, USA</div></div>
       </div>
     </div>
     <div class="testimonial-card fade-in">
       <div class="stars">★★★★★</div>
-      <div class="testimonial-text">"We enrolled all three of our children. The family package is very affordable and the quality is excellent. Our youngest is 5 and loves the interactive Kalima lessons. MashaAllah wonderful academy!"</div>
+      <div class="testimonial-text">"Main Germany mein rehta hoon aur Pakistani Quran teacher dhoondna mushkil tha. Al-Noor Academy ne yeh problem hal kar di. Ustazah Gulbahar ka timing Germany ke liye perfect hai aur Urdu mein samjhana bohot helpful hai. Highly recommended!"</div>
       <div class="testimonial-author">
-        <div class="author-avatar">F</div>
-        <div><div class="author-name">Farhan Malik</div><div class="author-loc">🇩🇪 Frankfurt, Germany</div></div>
+        <div class="author-avatar" style="background:#1a6b3c">K</div>
+        <div><div class="author-name">Kamran Hussain</div><div class="author-loc">🇩🇪 Dortmund, Germany</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card fade-in">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-text">"Mera beta Australia mein hai. Hafiz Ahsan ne usse Hifz karwaya — poora Quran 3 saal mein. Ijazah bhi mili Alhamdulillah. Is academy ne hamare family ka sapna pura kiya. Allah in sab teachers ko jazay khair de!"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar" style="background:#1a6b3c">S</div>
+        <div><div class="author-name">Shagufta Begum</div><div class="author-loc">🇦🇺 Melbourne, Australia</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card fade-in">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-text">"Pakistan mein hote hue bhi online classes ka yeh experience bohot acha raha. Meri 10 saal ki beti roz Hafiza Maizam ke saath padhti hai. Progress report WhatsApp pe milti hai. Fees bhi affordable hain. MashaAllah bohot acha kaam hai!"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar" style="background:#1a6b3c">A</div>
+        <div><div class="author-name">Arifa Shaheen</div><div class="author-loc">🇵🇰 Lahore, Pakistan</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── FAQ ── -->
+<!-- ── FAQ + CHATBOT ── -->
 <section id="faq">
   <div class="section-header fade-in">
-    <span class="section-label">❓ FAQ</span>
-    <h2>Frequently Asked Questions</h2>
+    <span class="section-label">❓ FAQ & Live Help</span>
+    <h2>Got a Question?</h2>
+    <p>Browse common questions below — or ask our chatbot instantly. For anything else, WhatsApp us!</p>
   </div>
-  <div class="faq-list">
-    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What platform do you use for classes? <span class="faq-arrow">▼</span></div><div class="faq-a">We use <strong>Zoom</strong> for video classes and <strong>WhatsApp video call</strong> for more informal/flexible sessions. You can choose whichever you prefer. Both work excellently for Quran teaching.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What age groups do you teach? <span class="faq-arrow">▼</span></div><div class="faq-a">We teach students of all ages — from children as young as 4 years old to adults in their 60s. We have dedicated children's teachers and adult specialists. It is never too late to learn the Quran!</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do you offer female teachers for sisters? <span class="faq-arrow">▼</span></div><div class="faq-a">Yes, absolutely. We have qualified female teachers (Hafizah with Ijazah) available for sisters and for children who prefer a female teacher. Please specify this when you enquire and we will match you accordingly.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How do timings work with different time zones? <span class="faq-arrow">▼</span></div><div class="faq-a">Our teachers are based in Pakistan (PKT timezone) and are available from 6am to 11pm PKT, which covers mornings in Europe/UK, evenings in North America, and afternoons in the Gulf. We will agree a fixed weekly slot that suits you.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is the free trial really free? <span class="faq-arrow">▼</span></div><div class="faq-a">Yes, 100% free — no credit card, no payment, no obligation. You get one 30-minute trial class to meet your teacher and assess your level. After that, you decide if you want to continue.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What if I miss a class? <span class="faq-arrow">▼</span></div><div class="faq-a">Life happens! If you give us at least 12 hours notice, we will reschedule the class at no extra charge. Emergency absences are handled on a case-by-case basis with full understanding.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Which Tajweed rules / Qira'ah do you teach? <span class="faq-arrow">▼</span></div><div class="faq-a">We teach the Hafs an Asim recitation (the most widely used in Pakistan, UK and most of the world). All Tajweed rules are taught according to the standard classical manuals (Al-Jazariyyah, Tuhfat ul Atfaal).</div></div>
+
+  <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start">
+
+    <!-- FAQ List -->
+    <div class="faq-list" style="margin:0">
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Zoom ya WhatsApp — kaunsa use hoga? <span class="faq-arrow">▼</span></div><div class="faq-a">Dono available hain! <strong>Zoom</strong> video class ke liye aur <strong>WhatsApp video call</strong> zyada asaan sessions ke liye. Aap jo prefer karein woh choose karein — dono pe Quran teaching excellent kaam karti hai.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Kis umar ke bachon ko parha sakte hain? <span class="faq-arrow">▼</span></div><div class="faq-a">4 saal se lekar 70+ tak! Chhotay bachon ke liye Hafiza Maizam Gulfraz hain, aur adults ke liye alag specialist teachers. Quran seekhna kabhi bhi shuru ho sakta hai!</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Kya sisters ke liye female teacher milegi? <span class="faq-arrow">▼</span></div><div class="faq-a">Bilkul! Hafiza Maizam Gulfraz aur Ustazah Gulbahar Shabbir — dono qualified Hafizah hain aur exclusively sisters aur bachiyaan parhaati hain. Enquiry mein zaroor mention karein.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">UK/USA/Europe ke time zone mein class kaise hogi? <span class="faq-arrow">▼</span></div><div class="faq-a">Hamare teachers Pakistan (PKT) mein hain — subah 6 baje se raat 11 baje tak available hain. UK evening = Pakistan late night, US morning = Pakistan afternoon. Aapke time zone ke hisaab se fixed slot miley ga.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Trial class bilkul free hai? <span class="faq-arrow">▼</span></div><div class="faq-a">Haan — 100% free! Koi payment nahi, koi commitment nahi. 30 minute ki trial class mein teacher se milo, apna level assess karo, aur phir decide karo. Koi pressure nahi.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Class miss ho jaye to? <span class="faq-arrow">▼</span></div><div class="faq-a">Koi problem nahi — 12 ghante pehle WhatsApp karein aur class reschedule ho jaye gi. Emergency mein bhi samajh ke kaam karte hain. Aapki suvidha hamari priority hai.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Hifz mein kitna time lagta hai? <span class="faq-arrow">▼</span></div><div class="faq-a">Bacche ke liye (regular daily classes): 2–4 saal. Adult learner ke liye: 4–7 saal. Daily participation aur revision se time kam ho sakta hai. Hafiz Ahsan Sammer ke students ne 5 Juz ek saal mein hifz kiye hain!</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Payment kaise hogi? <span class="faq-arrow">▼</span></div><div class="faq-a">Monthly payment — bank transfer, Western Union, JazzCash, EasyPaisa, ya aapke mulk ki currency mein. WhatsApp pe contact karein aur hum aapko sahi option batayein ge.</div></div>
+    </div>
+
+    <!-- FAQ Chatbot -->
+    <div id="chatbot-box" style="border:1.5px solid var(--border);border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.08)">
+      <div style="background:linear-gradient(135deg,#1a6b3c,#0f4d2a);padding:1rem 1.2rem;display:flex;align-items:center;gap:.75rem">
+        <div style="width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:1.3rem">📖</div>
+        <div>
+          <div style="color:#fff;font-weight:700;font-size:.95rem">Al-Noor Help</div>
+          <div style="color:rgba(255,255,255,.7);font-size:.75rem">● Online — answers in seconds</div>
+        </div>
+      </div>
+      <div id="chat-messages" style="height:320px;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.6rem">
+        <div class="bot-msg">Assalaamu Alaykum! 👋 Main Al-Noor Academy ka assistant hoon. Aap koi bhi sawaal poochhein — courses, fees, teachers, timings — main jawab dunga! Ya neeche se ek topic choose karein.</div>
+        <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.3rem">
+          <button class="chip" onclick="askChip('Courses kya hain?')">📚 Courses</button>
+          <button class="chip" onclick="askChip('Fees kitni hai?')">💰 Fees</button>
+          <button class="chip" onclick="askChip('Free trial kaise milega?')">🎁 Free trial</button>
+          <button class="chip" onclick="askChip('Female teacher chahiye')">👩 Sister teacher</button>
+          <button class="chip" onclick="askChip('Hifz programme kya hai?')">🏆 Hifz</button>
+          <button class="chip" onclick="askChip('UK time zone mein class')">🇬🇧 UK timing</button>
+        </div>
+      </div>
+      <div style="border-top:1px solid #e5e7eb;padding:.75rem;display:flex;gap:.5rem">
+        <input id="chat-input" placeholder="Apna sawaal likhein..." onkeypress="if(event.key==='Enter')sendChat()"
+          style="flex:1;padding:9px 14px;border-radius:20px;border:1.5px solid #e5e7eb;font-size:.85rem;outline:none;font-family:'Poppins',sans-serif"/>
+        <button onclick="sendChat()" style="background:#1a6b3c;color:#fff;border:none;border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:1.1rem;flex-shrink:0">➤</button>
+      </div>
+      <div style="padding:.5rem 1rem .75rem;display:flex;gap:.5rem">
+        <a href="https://wa.me/4915906171828?text=Assalaamu%20Alaykum!%20Al-Noor%20Academy%20se%20rabta%20karna%20chahta%20hoon." target="_blank"
+          style="flex:1;background:#25D366;color:#fff;text-align:center;padding:9px;border-radius:10px;text-decoration:none;font-size:.8rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:.3rem">
+          📱 WhatsApp (Germany)
+        </a>
+        <a href="https://wa.me/923415915690?text=Assalaamu%20Alaykum!%20Al-Noor%20Academy%20se%20rabta%20karna%20chahta%20hoon." target="_blank"
+          style="flex:1;background:#128C7E;color:#fff;text-align:center;padding:9px;border-radius:10px;text-decoration:none;font-size:.8rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:.3rem">
+          📱 WhatsApp (Pakistan)
+        </a>
+      </div>
+    </div>
   </div>
 </section>
+
+<style>
+.bot-msg{background:#f0faf4;border:1px solid #d4e8db;border-radius:12px 12px 12px 0;padding:.7rem 1rem;font-size:.84rem;color:#1c2b22;max-width:90%;line-height:1.6}
+.user-msg{background:#1a6b3c;color:#fff;border-radius:12px 12px 0 12px;padding:.7rem 1rem;font-size:.84rem;max-width:90%;align-self:flex-end;line-height:1.6}
+.chip{background:#f0faf4;border:1px solid #d4e8db;color:#1a6b3c;padding:5px 12px;border-radius:20px;font-size:.75rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Poppins',sans-serif}
+.chip:hover{background:#1a6b3c;color:#fff;border-color:#1a6b3c}
+#chat-messages::-webkit-scrollbar{width:4px}
+#chat-messages::-webkit-scrollbar-track{background:#f0faf4}
+#chat-messages::-webkit-scrollbar-thumb{background:#c9a84c;border-radius:4px}
+</style>
+
+<script>
+const FAQ_KB = {
+  'course':  'Hamare 6 courses hain:\n📖 Nazra Quran — Quran padhna seekhein\n🏆 Hifz ul Quran — poora Quran yaad karein\n🎵 Tajweed Rules — sahi talaffuz\n📜 Tafseer — Quran ka mafhoom\n🌙 Islamic Studies — din ki bunyaadein\n👶 Kids Kalima — 4+ saal ke bachon ke liye\n\nKaunsa course aapke liye suitable hai?',
+  'fee':     'Fees aapke country ki currency mein batayi jaati hain (GBP, USD, CAD, EUR). Exact amount ke liye WhatsApp karein — hum aapko complete package details bhejenge. Family package mein 3 bachon ke liye special discount bhi milti hai!',
+  'trial':   'Bilkul free! Ek 30-minute trial class — koi payment nahi, koi commitment nahi. Bas WhatsApp karein:\n🇩🇪 Germany: +49 159 0617 1828\n🇵🇰 Pakistan: +92 341 5915690\nAur likh dein: "Free trial chahiye"',
+  'sister':  'Haan ji! Hamare paas 2 qualified Hafizah hain:\n👩 Hafiza Maizam Gulfraz — bachiyaan aur sisters specialist\n👩 Ustazah Gulbahar Shabbir — Director, senior teacher\nDono exclusively females ko parhaati hain. Parda ka poora intizaam hai.',
+  'hifz':    'Hifz programme:\n⏱ Bachon ke liye: 2–4 saal (daily classes)\n⏱ Adults ke liye: 4–7 saal\n📚 Teacher: Hafiz Ahsan Sammer (Ijazah holder)\n✅ Roz sabaq + muraaja\'ah system\n🏆 Completion pe Ijazah milega\n\nTrial ke liye WhatsApp karein!',
+  'uk':      'UK timings:\nSummer: Pakistani teacher subah padhate hain = UK evening 7-10pm\nWinter: Pakistan evening = UK afternoon 2-5pm\nExact slot aapki preference ke mutabiq agree hoga. Flexible hain!',
+  'usa':     'USA timings:\nEast Coast: Pakistan raat 10pm-12am = US morning 5-7am\nWest Coast: Pakistan raat 12am-2am = US morning 4-6am\nYa Pakistan subah 6-9am = US previous evening 7-10pm EST',
+  'canada':  'Canada timings: Eastern = same as US East Coast. Mountain/Pacific mein kuch ghante aur shift hote hain. WhatsApp karein, hum aapka suitable slot nikaalenge!',
+  'time':    'Hamare teachers subah 6 baje se raat 11 baje tak (PKT) available hain — 7 din hafte. Yeh UK, US, Canada, Australia, Gulf — sab ke liye suitable hai.',
+  'zoom':    'Zoom ya WhatsApp video call — dono pe classes hoti hain! Zoom mein screen share aur recording ka option bhi hai. WhatsApp simple aur easy hai. Aapki marzi!',
+  'miss':    'Koi baat nahi! 12 ghante pehle WhatsApp karein aur class reschedule ho jaye gi. Emergency mein bhi samajh ke kaam karte hain — aapki suwidha hamari zimmedari hai.',
+  'payment': 'Payment options:\n💳 Bank transfer (international)\n📱 JazzCash / EasyPaisa (Pakistan)\n💶 Western Union / Wise\nSab aapki currency mein (GBP, USD, CAD, EUR, PKR). Details WhatsApp pe!',
+  'teacher': 'Hamare teachers:\n👩 Ustazah Gulbahar Shabbir (Director) — Hafizah, Europe-based\n👨 Hafiz Ahsan Sammer — Hifz specialist, Ijazah holder\n👩 Hafiza Maizam Gulfraz — Sisters & kids specialist\nTeenon qualified, experienced aur dedicated hain!',
+  'pakistan':'Pakistan mein bhi classes hoti hain! WhatsApp (Pakistan): +92 341 5915690\nYa hamare Pakistan-based teachers se directly rabta karein.',
+  'default': 'Aapka sawaal samajh gaya! Yeh cheez ke baray mein humara team se seedha poochhein — bahut jald jawab milega:\n\n📱 WhatsApp Germany: wa.me/4915906171828\n📱 WhatsApp Pakistan: wa.me/923415915690\n✉️ Email: vistavisa7@gmail.com'
+};
+
+function getAnswer(q) {
+  const lq = q.toLowerCase();
+  if(/course|subject|kya hai|programme|padhna|silabus/.test(lq)) return FAQ_KB.course;
+  if(/fee|fees|price|cost|kitni|payment|charge|rate/.test(lq)) return FAQ_KB.fee;
+  if(/trial|free|mufat|try|pehli class/.test(lq)) return FAQ_KB.trial;
+  if(/sister|female|aurat|parda|girl|bachi|hafizah|maizam|gulbahar/.test(lq)) return FAQ_KB.sister;
+  if(/hifz|hafiz|memoris|yaad|memoriz/.test(lq)) return FAQ_KB.hifz;
+  if(/uk|england|britain|birmingham|london/.test(lq)) return FAQ_KB.uk;
+  if(/usa|america|united states|houston|chicago|new york/.test(lq)) return FAQ_KB.usa;
+  if(/canada|toronto|mississauga/.test(lq)) return FAQ_KB.canada;
+  if(/time|timing|waqt|schedule|slot|zone/.test(lq)) return FAQ_KB.time;
+  if(/zoom|platform|app|video/.test(lq)) return FAQ_KB.zoom;
+  if(/miss|absent|reschedul|cancel/.test(lq)) return FAQ_KB.miss;
+  if(/pay|payment|bank|transfer|jazz|easypaisa|western/.test(lq)) return FAQ_KB.payment;
+  if(/teacher|ustaz|hafiz|who|kaun|staff/.test(lq)) return FAQ_KB.teacher;
+  if(/pakistan|pk|lahore|karachi|islamabad/.test(lq)) return FAQ_KB.pakistan;
+  return FAQ_KB.default;
+}
+
+function addMsg(text, isUser) {
+  const box = document.getElementById('chat-messages');
+  const d = document.createElement('div');
+  d.className = isUser ? 'user-msg' : 'bot-msg';
+  d.style.whiteSpace = 'pre-line';
+  d.textContent = text;
+  box.appendChild(d);
+  box.scrollTop = box.scrollHeight;
+}
+
+function sendChat() {
+  const inp = document.getElementById('chat-input');
+  const q = inp.value.trim();
+  if (!q) return;
+  inp.value = '';
+  addMsg(q, true);
+  setTimeout(() => {
+    const ans = getAnswer(q);
+    addMsg(ans, false);
+    if (ans === FAQ_KB.default) {
+      setTimeout(() => {
+        const d = document.createElement('div');
+        d.style.cssText = 'display:flex;gap:.5rem;margin-top:.3rem';
+        d.innerHTML = '<a href="https://wa.me/4915906171828?text=' + encodeURIComponent(q) + '" target="_blank" style="flex:1;background:#25D366;color:#fff;text-align:center;padding:8px;border-radius:8px;text-decoration:none;font-size:.78rem;font-weight:700">📱 WhatsApp (DE)</a><a href="https://wa.me/923415915690?text=' + encodeURIComponent(q) + '" target="_blank" style="flex:1;background:#128C7E;color:#fff;text-align:center;padding:8px;border-radius:8px;text-decoration:none;font-size:.78rem;font-weight:700">📱 WhatsApp (PK)</a>';
+        document.getElementById('chat-messages').appendChild(d);
+        document.getElementById('chat-messages').scrollTop = 99999;
+      }, 300);
+    }
+  }, 600);
+}
+
+function askChip(q) {
+  document.getElementById('chat-input').value = q;
+  sendChat();
+}
+</script>
 
 <!-- ── CONTACT ── -->
 <section class="contact-section" id="contact">
@@ -737,10 +899,16 @@
       <a class="contact-method" href="https://wa.me/4915906171828?text=Assalaamu%20Alaykum!%20I%20am%20interested%20in%20Online%20Quran%20classes." target="_blank">
         <div class="contact-method-icon">📱</div>
         <div class="contact-method-text">
-          <strong>WhatsApp (Fastest)</strong>
-          <span>+49 159 0617 1828 · Typically within 1–2 hours</span>
+          <strong>WhatsApp — Germany (Ustazah Gulbahar)</strong>
+          <span>+49 159 0617 1828 · Fastest response</span>
         </div>
       </a>
+      <a class="contact-method" href="https://wa.me/923415915690?text=Assalaamu%20Alaykum!%20Al-Noor%20Academy%20se%20rabta%20karna%20chahta%20hoon." target="_blank">
+        <div class="contact-method-icon">📱</div>
+        <div class="contact-method-text">
+          <strong>WhatsApp — Pakistan (Hafiz Ahsan / Hafiza Maizam)</strong>
+          <span>+92 341 5915690 · Urdu/English support</span>
+        </div>
       <a class="contact-method" href="mailto:vistavisa7@gmail.com">
         <div class="contact-method-icon">✉️</div>
         <div class="contact-method-text">
