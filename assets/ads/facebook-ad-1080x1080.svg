@@ -1,0 +1,57 @@
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <radialGradient id="bg1" cx="50%" cy="40%" r="70%">
+    <stop offset="0%" stop-color="#0f3d22"/><stop offset="100%" stop-color="#061a0e"/>
+  </radialGradient>
+  <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.18"/><stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1080" height="1080" fill="url(#bg1)"/>
+<rect width="1080" height="1080" fill="url(#glow)"/>
+<g opacity="0.13">
+  <polygon points="0,0 160,0 0,160" fill="#c9a84c"/>
+  <polygon points="0,0 110,0 0,110" fill="#0f3d22"/>
+  <polygon points="1080,0 920,0 1080,160" fill="#c9a84c"/>
+  <polygon points="1080,0 970,0 1080,110" fill="#0f3d22"/>
+  <polygon points="0,1080 160,1080 0,920" fill="#c9a84c"/>
+  <polygon points="0,1080 110,1080 0,970" fill="#0f3d22"/>
+  <polygon points="1080,1080 920,1080 1080,920" fill="#c9a84c"/>
+  <polygon points="1080,1080 970,1080 1080,970" fill="#0f3d22"/>
+</g>
+<rect x="0" y="0" width="1080" height="1080" fill="none" stroke="#c9a84c" stroke-width="12"/>
+<rect x="16" y="16" width="1048" height="1048" fill="none" stroke="#c9a84c" stroke-width="2" opacity="0.4"/>
+<circle cx="540" cy="540" r="440" fill="none" stroke="#c9a84c" stroke-width="1.2" opacity="0.12"/>
+<circle cx="540" cy="540" r="390" fill="none" stroke="#c9a84c" stroke-width="0.8" opacity="0.08"/>
+<text x="540" y="104" text-anchor="middle" font-family="Georgia,serif" font-size="36" fill="#c9a84c" opacity="0.9">﴿ اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ ﴾</text>
+<text x="540" y="144" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="rgba(255,255,255,0.4)" letter-spacing="3">"Read in the name of your Lord who created"  — Surah Al-Alaq 96:1</text>
+<line x1="160" y1="168" x2="920" y2="168" stroke="#c9a84c" stroke-width="1.5" opacity="0.5"/>
+<circle cx="540" cy="168" r="6" fill="#c9a84c" opacity="0.7"/>
+<text x="540" y="296" text-anchor="middle" font-family="Georgia,serif" font-size="84" fill="#f0c060" font-weight="bold">نُورِ شَبِّير</text>
+<text x="540" y="364" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="52" fill="#ffffff" font-weight="900" letter-spacing="4">Noor-e-Shabbir</text>
+<text x="540" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#c9a84c" letter-spacing="10" font-weight="bold">ONLINE QURAN ACADEMY</text>
+<line x1="240" y1="426" x2="450" y2="426" stroke="#c9a84c" stroke-width="1.5" opacity="0.6"/>
+<circle cx="540" cy="426" r="8" fill="#c9a84c"/>
+<line x1="630" y1="426" x2="840" y2="426" stroke="#c9a84c" stroke-width="1.5" opacity="0.6"/>
+<text x="540" y="500" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="38" fill="#ffffff" font-weight="900">آنلائن قرآن کلاسز — ابھی شامل ہوں!</text>
+<text x="540" y="542" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="32" fill="#f0c060" font-weight="700">Online Quran Classes — Join Now!</text>
+<rect x="60"  y="576" width="456" height="124" rx="20" fill="rgba(201,168,76,0.12)" stroke="#c9a84c" stroke-width="1.5"/>
+<text x="288" y="608" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#c9a84c" font-weight="bold">✨ کیا سیکھیں گے</text>
+<text x="288" y="636" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#e6edf3">حفظ · ناظرہ · تجوید · تفسیر</text>
+<text x="288" y="662" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#e6edf3">Hifz · Nazra · Tajweed · Tafseer</text>
+<rect x="564" y="576" width="456" height="124" rx="20" fill="rgba(201,168,76,0.12)" stroke="#c9a84c" stroke-width="1.5"/>
+<text x="792" y="608" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#c9a84c" font-weight="bold">🌍 ہم کہاں پڑھاتے ہیں</text>
+<text x="792" y="636" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#e6edf3">UK · USA · Canada · Europe</text>
+<text x="792" y="662" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#e6edf3">Australia · Pakistan + more</text>
+<rect x="60" y="724" width="960" height="116" rx="20" fill="rgba(15,61,34,0.85)" stroke="#c9a84c" stroke-width="1.5"/>
+<text x="540" y="760" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#c9a84c" font-weight="bold" letter-spacing="2">👨‍🏫  ہمارے اساتذہ  /  OUR TEACHERS</text>
+<text x="540" y="794" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#e6edf3">Molana Gulbahar Shabbir  ·  Hafiz Ahsan Sammer  ·  Hafiz Arman Gulfaraz</text>
+<text x="540" y="822" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#e6edf3">Hafiza Maizam Gulfraz (Sisters &amp; Kids only)  ·  All Huffaz with Ijazah</text>
+<rect x="180" y="864" width="720" height="84" rx="42" fill="#c9a84c"/>
+<text x="540" y="898" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="24" fill="#0a2915" font-weight="900">🎁 پہلی کلاس بالکل مفت! — First Trial Class FREE!</text>
+<text x="540" y="928" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#0a2915" font-weight="bold">No payment required · No commitment · Just one beautiful class</text>
+<text x="540" y="986" text-anchor="middle" font-family="Arial,sans-serif" font-size="21" fill="#ffffff" font-weight="bold">📱 WhatsApp ابھی کریں: +92 341 5915690</text>
+<text x="540" y="1016" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="rgba(255,255,255,0.5)" letter-spacing="2">Zoom &amp; WhatsApp Classes  ·  Flexible Timings  ·  All Ages (4+) Welcome</text>
+<line x1="160" y1="1040" x2="920" y2="1040" stroke="#c9a84c" stroke-width="1" opacity="0.35"/>
+<text x="540" y="1066" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="#c9a84c" opacity="0.65">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</text>
+</svg>
