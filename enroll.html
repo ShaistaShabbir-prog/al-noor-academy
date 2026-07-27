@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Enroll Now — Noor-e-Shabbir Online Quran Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--green:#1a6b3c;--green2:#0f4d2a;--gold:#c9a84c;--gold2:#f0c060;--cream:#fdf8f0;--dark:#0a1a12;--text:#1c2b22;--muted:#5a7a65;--border:#d4e8db;--white:#ffffff}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--cream);color:var(--text);font-family:'Poppins',sans-serif}
+    nav{background:rgba(10,26,18,.97);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:70px;border-bottom:1px solid rgba(201,168,76,.3)}
+    nav .logo{color:#fff;font-weight:700;font-size:1.1rem}
+    nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.85rem;margin-left:1.5rem}
+    nav a:hover{color:var(--gold2)}
+    .hero{background:linear-gradient(135deg,var(--dark),var(--green2));padding:3.5rem 5%;text-align:center}
+    .hero h1{color:#fff;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:.5rem}
+    .hero p{color:rgba(255,255,255,.7);font-size:1rem}
+    .form-section{max-width:680px;margin:0 auto;padding:2.5rem 1.5rem}
+    .card{background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:2rem;margin-bottom:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+    .card h3{font-size:1rem;font-weight:700;color:var(--green);margin-bottom:1.2rem;padding-bottom:.6rem;border-bottom:1px solid var(--border)}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:.8rem}
+    @media(max-width:500px){.form-row{grid-template-columns:1fr}}
+    label{display:block;font-size:.8rem;color:var(--muted);margin-bottom:.3rem;font-weight:600}
+    input,select,textarea{width:100%;padding:10px 14px;border-radius:10px;border:1.5px solid var(--border);font-family:'Poppins',sans-serif;font-size:.88rem;color:var(--text);outline:none;transition:border-color .2s}
+    input:focus,select:focus,textarea:focus{border-color:var(--green)}
+    textarea{height:90px;resize:vertical}
+    .full{grid-column:1/-1}
+    .submit-btn{width:100%;padding:14px;border-radius:12px;font-weight:700;font-size:1rem;cursor:pointer;border:none;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;gap:.6rem;transition:all .3s;font-family:'Poppins',sans-serif}
+    .submit-btn:hover{background:#1da851;transform:translateY(-2px)}
+    .required{color:#dc2626}
+    .info-box{background:rgba(26,107,60,.06);border:1px solid rgba(26,107,60,.2);border-radius:10px;padding:.9rem;font-size:.82rem;color:var(--muted);margin-bottom:1rem}
+    .info-box strong{color:var(--green)}
+    .arabic-text{font-family:'Amiri',serif;color:var(--gold);font-size:1.2rem;text-align:center;margin-bottom:.5rem}
+  </style>
+</head>
+<body>
+<nav>
+  <span class="logo">📖 Noor-e-Shabbir Academy</span>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="enroll.html" style="color:var(--gold2)">Enroll</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="arabic-text">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+  <h1>📚 Enroll in Quran Classes</h1>
+  <p>Fill in the form below — we'll WhatsApp you within 24 hours with your schedule and trial class details</p>
+</div>
+
+<div class="form-section">
+  <div class="info-box">
+    <strong>🎁 First class is FREE</strong> — No payment required until you decide to continue.
+    After submitting, Molana Gulbahar or a team member will contact you on WhatsApp to confirm your slot.
+  </div>
+
+  <!-- Student info -->
+  <div class="card">
+    <h3>👤 Student Information</h3>
+    <div class="form-row">
+      <div>
+        <label>Student's Full Name <span class="required">*</span></label>
+        <input id="student-name" placeholder="e.g. Ahmed Hassan" required/>
+      </div>
+      <div>
+        <label>Age <span class="required">*</span></label>
+        <input id="age" type="number" min="4" max="80" placeholder="e.g. 8"/>
+      </div>
+    </div>
+    <div class="form-row">
+      <div>
+        <label>Gender <span class="required">*</span></label>
+        <select id="gender">
+          <option value="">Select...</option>
+          <option>Male</option>
+          <option>Female (sisters/girls — Hafiza Maizam)</option>
+        </select>
+      </div>
+      <div>
+        <label>Current Quran level</label>
+        <select id="level">
+          <option value="">Select...</option>
+          <option>Complete beginner (never read Quran)</option>
+          <option>Knows Arabic letters</option>
+          <option>Reading Qaida / Noorani Qaida</option>
+          <option>Reading Quran slowly</option>
+          <option>Reading fluently — want Tajweed</option>
+          <option>Hafiz/Hafizah already</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact info -->
+  <div class="card">
+    <h3>📱 Contact Details (Parent / Guardian)</h3>
+    <div class="form-row">
+      <div>
+        <label>Your Name <span class="required">*</span></label>
+        <input id="parent-name" placeholder="Parent or guardian name"/>
+      </div>
+      <div>
+        <label>Country <span class="required">*</span></label>
+        <select id="country">
+          <option value="">Select country...</option>
+          <option>United Kingdom 🇬🇧</option>
+          <option>United States 🇺🇸</option>
+          <option>Canada 🇨🇦</option>
+          <option>Australia 🇦🇺</option>
+          <option>Germany 🇩🇪</option>
+          <option>Netherlands 🇳🇱</option>
+          <option>Sweden 🇸🇪</option>
+          <option>Norway 🇳🇴</option>
+          <option>Saudi Arabia 🇸🇦</option>
+          <option>UAE 🇦🇪</option>
+          <option>Pakistan 🇵🇰</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div>
+        <label>WhatsApp Number <span class="required">*</span></label>
+        <input id="whatsapp" type="tel" placeholder="+44 7xxx xxxxxx (with country code)"/>
+      </div>
+      <div>
+        <label>Email Address</label>
+        <input id="email" type="email" placeholder="optional"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- Course -->
+  <div class="card">
+    <h3>📚 Course & Schedule Preference</h3>
+    <div class="form-row">
+      <div>
+        <label>Course Interested In <span class="required">*</span></label>
+        <select id="course">
+          <option value="">Select course...</option>
+          <option>📖 Nazra Quran (learn to read)</option>
+          <option>🏆 Hifz ul Quran (memorisation)</option>
+          <option>🎵 Tajweed Rules</option>
+          <option>📜 Tafseer & Translation</option>
+          <option>🌙 Islamic Studies</option>
+          <option>👶 Kids Kalima & Short Surahs</option>
+        </select>
+      </div>
+      <div>
+        <label>Preferred Platform</label>
+        <select id="platform">
+          <option>Zoom (recommended)</option>
+          <option>WhatsApp video call</option>
+          <option>Either is fine</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div>
+        <label>Preferred Days</label>
+        <select id="days">
+          <option>Mon, Wed, Fri (3 days/week)</option>
+          <option>Tue, Thu, Sat (3 days/week)</option>
+          <option>Sat, Sun (weekends only)</option>
+          <option>Every day (Mon–Fri)</option>
+          <option>Daily (Mon–Sun)</option>
+          <option>Flexible — any days</option>
+        </select>
+      </div>
+      <div>
+        <label>Preferred Time (your local time)</label>
+        <input id="time" placeholder="e.g. 6pm–8pm weekdays"/>
+      </div>
+    </div>
+    <div>
+      <label>Any additional information</label>
+      <textarea id="notes" placeholder="e.g. sister prefers female teacher, previous experience, specific goals..."></textarea>
+    </div>
+  </div>
+
+  <!-- Submit -->
+  <button class="submit-btn" onclick="submitEnrollment()">
+    <span>📲</span> Submit via WhatsApp
+  </button>
+  <p style="text-align:center;color:var(--muted);font-size:.75rem;margin-top:.6rem">
+    This opens WhatsApp with your enrollment details pre-filled. We'll reply within 24 hours inshAllah.
+  </p>
+</div>
+
+<script>
+function submitEnrollment() {
+  const student = document.getElementById('student-name').value.trim();
+  const age     = document.getElementById('age').value;
+  const gender  = document.getElementById('gender').value;
+  const level   = document.getElementById('level').value;
+  const parent  = document.getElementById('parent-name').value.trim();
+  const country = document.getElementById('country').value;
+  const wa      = document.getElementById('whatsapp').value.trim();
+  const email   = document.getElementById('email').value.trim();
+  const course  = document.getElementById('course').value;
+  const platform= document.getElementById('platform').value;
+  const days    = document.getElementById('days').value;
+  const time    = document.getElementById('time').value.trim();
+  const notes   = document.getElementById('notes').value.trim();
+
+  if (!student || !gender || !parent || !country || !wa || !course) {
+    alert('Please fill in all required fields (*)');
+    return;
+  }
+
+  const msg = `Assalaamu Alaykum! Enrollment Enquiry — Noor-e-Shabbir Academy
+
+👤 Student: ${student} (Age: ${age || 'not stated'}, ${gender})
+📊 Current Level: ${level || 'not stated'}
+
+👨 Parent/Guardian: ${parent}
+🌍 Country: ${country}
+📱 WhatsApp: ${wa}${email ? '\n✉️ Email: ' + email : ''}
+
+📚 Course: ${course}
+💻 Platform: ${platform}
+📅 Days: ${days}
+🕐 Time: ${time || 'flexible'}
+${notes ? '\n💬 Notes: ' + notes : ''}
+
+Please confirm a FREE trial class. JazakAllah Khair!`;
+
+  window.open('https://wa.me/923415915690?text=' + encodeURIComponent(msg), '_blank');
+}
+</script>
+</body>
+</html>

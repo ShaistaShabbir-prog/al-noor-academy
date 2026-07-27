@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Class Schedule — Noor-e-Shabbir Online Quran Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--green:#1a6b3c;--gold:#c9a84c;--gold2:#f0c060;--dark:#0a1a12;--text:#1c2b22;--muted:#5a7a65;--border:#d4e8db;--cream:#fdf8f0}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--cream);color:var(--text);font-family:'Poppins',sans-serif}
+    nav{background:rgba(10,26,18,.97);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:70px;border-bottom:1px solid rgba(201,168,76,.3)}
+    nav .logo{color:#fff;font-weight:700}
+    nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.85rem;margin-left:1.5rem}
+    nav a:hover{color:var(--gold2)}
+    .hero{background:linear-gradient(135deg,var(--dark),var(--green));padding:3rem 5%;text-align:center}
+    .hero h1{color:#fff;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;margin-bottom:.5rem}
+    .hero p{color:rgba(255,255,255,.7);font-size:.95rem}
+    .container{max-width:900px;margin:0 auto;padding:2.5rem 1.5rem}
+    .notice{background:rgba(201,168,76,.12);border:1px solid var(--gold);border-radius:12px;padding:1rem 1.2rem;font-size:.85rem;color:#5a4a1a;margin-bottom:2rem}
+    .teacher-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+    .tab-btn{padding:8px 18px;border-radius:20px;border:1.5px solid var(--border);background:#fff;color:var(--muted);cursor:pointer;font-size:.82rem;font-weight:600;transition:all .2s;font-family:'Poppins',sans-serif}
+    .tab-btn.active,.tab-btn:hover{background:var(--green);color:#fff;border-color:var(--green)}
+    .schedule-table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+    .schedule-table th{background:var(--green);color:#fff;padding:10px 14px;text-align:left;font-size:.82rem;font-weight:600}
+    .schedule-table td{padding:9px 14px;border-bottom:1px solid var(--border);font-size:.83rem}
+    .schedule-table tr:last-child td{border:none}
+    .schedule-table tr:hover td{background:rgba(26,107,60,.04)}
+    .slot-badge{display:inline-block;padding:2px 8px;border-radius:6px;font-size:.72rem;font-weight:600}
+    .slot-open{background:rgba(34,197,94,.12);color:#15803d}
+    .slot-full{background:rgba(239,68,68,.1);color:#dc2626}
+    .slot-limited{background:rgba(251,191,36,.12);color:#b45309}
+    .tz-note{color:var(--muted);font-size:.78rem;margin-top:.5rem}
+    .enroll-cta{background:linear-gradient(135deg,var(--green),#0f4d2a);color:#fff;border-radius:16px;padding:1.5rem;text-align:center;margin-top:2rem}
+    .enroll-cta h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
+    .enroll-cta p{font-size:.85rem;opacity:.85;margin-bottom:1rem}
+    .wa-btn{display:inline-flex;align-items:center;gap:.5rem;background:#25D366;color:#fff;padding:11px 22px;border-radius:25px;text-decoration:none;font-weight:700;font-size:.88rem}
+  </style>
+</head>
+<body>
+<nav>
+  <span class="logo">📖 Noor-e-Shabbir Academy</span>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="schedule.html" style="color:var(--gold2)">Schedule</a>
+    <a href="enroll.html">Enroll</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>📅 Class Schedule 2025</h1>
+  <p>Available time slots — All times shown in Pakistan Standard Time (PKT, UTC+5)</p>
+</div>
+
+<div class="container">
+  <div class="notice">
+    ⏰ <strong>All times are in Pakistan Standard Time (PKT = UTC+5).</strong>
+    UK (BST) = PKT −4h &nbsp;|&nbsp; Germany (CEST) = PKT −3h &nbsp;|&nbsp; USA East (EDT) = PKT −9h &nbsp;|&nbsp; USA West (PDT) = PKT −12h &nbsp;|&nbsp; Canada (EDT) = PKT −9h &nbsp;|&nbsp; Australia (AEST) = PKT +5h
+  </div>
+
+  <div class="teacher-tabs">
+    <button class="tab-btn active" onclick="showTeacher('all',this)">All Teachers</button>
+    <button class="tab-btn" onclick="showTeacher('gulbahar',this)">Molana Gulbahar</button>
+    <button class="tab-btn" onclick="showTeacher('ahsan',this)">Hafiz Ahsan</button>
+    <button class="tab-btn" onclick="showTeacher('arman',this)">Hafiz Arman</button>
+    <button class="tab-btn" onclick="showTeacher('maizam',this)">Hafiza Maizam</button>
+  </div>
+
+  <table class="schedule-table" id="schedule-table">
+    <thead>
+      <tr>
+        <th>Teacher</th>
+        <th>Course</th>
+        <th>Days</th>
+        <th>Time (PKT)</th>
+        <th>Availability</th>
+      </tr>
+    </thead>
+    <tbody id="schedule-body"></tbody>
+  </table>
+  <p class="tz-note">💡 Need a different time? We create custom slots — just WhatsApp us!</p>
+
+  <div class="enroll-cta">
+    <h3>📝 Ready to start?</h3>
+    <p>Book your FREE trial class — no payment required. We'll confirm your slot within 24 hours.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="enroll.html" class="wa-btn" style="background:var(--gold);color:var(--dark)">📋 Online Enrollment Form</a>
+      <a href="https://wa.me/923415915690?text=Assalaamu%20Alaykum!%20I%20want%20to%20book%20a%20FREE%20trial%20class." target="_blank" class="wa-btn">📱 WhatsApp Us</a>
+    </div>
+  </div>
+</div>
+
+<script>
+const SLOTS = [
+  {t:'gulbahar',teacher:'Molana Gulbahar Shabbir',course:'Hifz ul Quran',days:'Mon Wed Fri',time:'9:00–9:45 AM',avail:'open'},
+  {t:'gulbahar',teacher:'Molana Gulbahar Shabbir',course:'Nazra Quran',days:'Tue Thu Sat',time:'10:00–10:45 AM',avail:'limited'},
+  {t:'gulbahar',teacher:'Molana Gulbahar Shabbir',course:'Tajweed Rules',days:'Mon Tue Wed',time:'7:00–7:45 PM',avail:'open'},
+  {t:'gulbahar',teacher:'Molana Gulbahar Shabbir',course:'Hifz ul Quran',days:'Daily Mon–Fri',time:'8:00–8:45 PM',avail:'limited'},
+  {t:'ahsan',teacher:'Hafiz Ahsan Sammer',course:'Hifz ul Quran',days:'Mon–Fri',time:'6:00–6:45 AM',avail:'open'},
+  {t:'ahsan',teacher:'Hafiz Ahsan Sammer',course:'Hifz ul Quran',days:'Mon–Fri',time:'4:00–4:45 PM',avail:'open'},
+  {t:'ahsan',teacher:'Hafiz Ahsan Sammer',course:'Tajweed Rules',days:'Sat Sun',time:'9:00–9:45 AM',avail:'open'},
+  {t:'ahsan',teacher:'Hafiz Ahsan Sammer',course:'Ijazah Programme',days:'Mon Wed Fri',time:'5:00–6:00 PM',avail:'limited'},
+  {t:'arman',teacher:'Hafiz Arman Gulfaraz',course:'Nazra Quran',days:'Mon Wed Fri',time:'7:00–7:45 AM',avail:'open'},
+  {t:'arman',teacher:'Hafiz Arman Gulfaraz',course:'Nazra Quran',days:'Tue Thu Sat',time:'3:00–3:45 PM',avail:'open'},
+  {t:'arman',teacher:'Hafiz Arman Gulfaraz',course:'Tajweed (Beginners)',days:'Sat Sun',time:'10:00–10:45 AM',avail:'open'},
+  {t:'arman',teacher:'Hafiz Arman Gulfaraz',course:'Islamic Studies',days:'Mon–Fri',time:'6:00–6:45 PM',avail:'limited'},
+  {t:'maizam',teacher:'Hafiza Maizam Gulfraz',course:'Kids Kalima & Nazra',days:'Mon–Fri',time:'8:00–8:30 AM',avail:'open'},
+  {t:'maizam',teacher:'Hafiza Maizam Gulfraz',course:'Nazra Quran (Sisters)',days:'Mon Wed Fri',time:'2:00–2:45 PM',avail:'open'},
+  {t:'maizam',teacher:'Hafiza Maizam Gulfraz',course:'Tajweed (Sisters)',days:'Tue Thu',time:'4:00–4:45 PM',avail:'open'},
+  {t:'maizam',teacher:'Hafiza Maizam Gulfraz',course:'Kids Islamic Studies',days:'Sat Sun',time:'9:00–9:30 AM',avail:'limited'},
+];
+
+function showTeacher(code, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const filtered = code==='all' ? SLOTS : SLOTS.filter(s => s.t===code);
+  const badgeClass = {open:'slot-open',limited:'slot-limited',full:'slot-full'};
+  const badgeLabel = {open:'Open ✓',limited:'Limited',full:'Full'};
+  document.getElementById('schedule-body').innerHTML = filtered.map(s => `
+    <tr>
+      <td><strong>${s.teacher}</strong></td>
+      <td>${s.course}</td>
+      <td style="color:#5a7a65">${s.days}</td>
+      <td>${s.time} PKT</td>
+      <td><span class="slot-badge ${badgeClass[s.avail]}">${badgeLabel[s.avail]}</span></td>
+    </tr>`).join('');
+}
+
+showTeacher('all', document.querySelector('.tab-btn.active'));
+</script>
+</body>
+</html>
